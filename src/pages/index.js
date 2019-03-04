@@ -1,20 +1,44 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react'
+// import { Link } from "gatsby"
+import styled from 'styled-components'
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import drums from '../images/drums.png'
+
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+
+// const StyledTagline = styled.div`
+//   background: ${({ theme }) => theme.mediumBlue};
+//   color: ${({ theme }) => theme.white};
+//   border-left: ${({ theme }) => `10vw solid ${theme.darkBlue}`};
+//   padding: 1em;
+//   font-weight: bold;
+//   display: flex;
+//   align-items: center;
+
+//   p {
+//     margin: 0;
+//     padding: 0;
+//   }
+// `
+
+const StyledContent = styled.div`
+  background-image: url(${drums});
+  background-position: right;
+  background-size: cover;
+  color: ${({ theme }) => theme.white};
+  min-height: 50vh;
+  /* display: flex; */
+  /* align-items: flex-end; */
+  position: relative;
+`
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <SEO title="Home" />
+    <StyledContent>
+      <p>Homepage content......</p>
+    </StyledContent>
   </Layout>
 )
 
